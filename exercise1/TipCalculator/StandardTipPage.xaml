@@ -3,20 +3,6 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TipCalculator.StandardTipPage"
              Title="Standard Tip">
-	<ContentPage.Resources>
-		<Color x:Key="bgColor">Silver</Color>
-		<Color x:Key="fgColor">Navy</Color>
-		<x:Double x:Key="fontSize">22</x:Double>
-
-		<Style x:Key="baseLabelStyle" TargetType="Label">
-			<Setter Property="FontSize" Value="{StaticResource fontSize}" />
-		</Style>
-
-		<Style x:Key="infoLabelStyle" TargetType="Label" BasedOn="{StaticResource baseLabelStyle}">
-			<Setter Property="FontAttributes" Value="Bold" />
-		</Style>
-	</ContentPage.Resources>
-
 	<Grid x:Name ="LayoutRoot" BackgroundColor="{DynamicResource bgColor}" Padding="10"
           ColumnDefinitions="*, 3*"
           RowDefinitions="Auto, Auto, Auto, Auto, *">
@@ -37,8 +23,8 @@
 
         <!-- Swap the foreground/background colors of this page -->
         <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="End" Spacing="100" Grid.Row="4" Grid.ColumnSpan="2">
-            <Button Clicked="OnLight" Text="Light" TextColor="White" Grid.Column="0" />
-            <Button Clicked="OnDark"  Text="Dark"  TextColor="White" Grid.Column="1" />
+			<Button Clicked="OnLight"  Text="Light" TextColor="{DynamicResource fgColor}" Grid.Column="0" />
+			<Button Clicked="OnDark"  Text="Dark"  TextColor="{DynamicResource fgColor}" Grid.Column="1" />
         </HorizontalStackLayout>
 
     </Grid>
